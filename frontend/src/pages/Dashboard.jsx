@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [data, setData] = useState(null);
 
   const load = async () => {
-    const res = await axios.get(`http://localhost:5000/api/dashboard?month=${month}`);
+    const res = await axios.get(`https://ngo-report-system.onrender.com/api/dashboard?month=${month}`);
     setData(res.data);
   };
 

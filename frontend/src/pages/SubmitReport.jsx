@@ -10,7 +10,7 @@ export default function SubmitReport() {
 
   const submit = async () => {
     try {
-      await axios.post("http://localhost:5000/api/report", form);
+      await axios.post("https://ngo-report-system.onrender.com/api/report", form);
       alert("Report submitted successfully");
     } catch {
       alert("Duplicate or invalid report");

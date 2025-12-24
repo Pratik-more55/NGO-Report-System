@@ -10,11 +10,11 @@ export default function BulkUpload() {
     const form = new FormData();
     form.append("file", file);
 
-    const res = await axios.post("http://localhost:5000/api/reports/upload", form);
+    const res = await axios.post("https://ngo-report-system.onrender.com/api/reports/upload", form);
     const jobId = res.data.jobId;
 
     const interval = setInterval(async () => {
-      const status = await axios.get(`http://localhost:5000/api/job-status/${jobId}`);
+      const status = await axios.get(`https://ngo-report-system.onrender.com/api/job-status/${jobId}`);
       setProgress(status.data);
       if (status.data.processed === status.data.total) clearInterval(interval);
     }, 1000);
